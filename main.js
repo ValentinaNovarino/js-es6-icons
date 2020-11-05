@@ -125,11 +125,38 @@ $(document).ready(function() {
         // console.log('cambiato elemento select');
         const selectedType = $('.filter-icon').val();
         console.log(selectedType);
+
+        // svuoto il contenitore al cambio del valore
+        $('#icons-container').empty();
+
+        if(selectedType != '') {
+            // recupero le icone del tipo scelto dall'utente
+            const chosenIcons = icons.filter((icon) => {
+                return selectedType == icon.type;
+            });
+
+            chosenIcons.forEach((icon) => {
+                printIcon(icon);
+            });
+        } else {
+            printAllIcons(icons);
+        }
+
     });
+    // invoco la funzione per destrutturare e stampare le icone in pagina
+    printAllIcons(icons);
+
+    // FUNZIONI
+
+    function printAllIcons(iconsArray) {
+        iconsArray.forEach((icon) => {
+            printIcon(icon);
+        });
+    }
     // visualizzare in pagin tutte le icone
     // destrutturo e recupero le chiavi che mi servono per stampare le icone in pagina in ciclo forEach per scorrere tutti gli oggetti icon
-    icons.forEach((icon) => {
-        const {name, prefix, family, type} = icon;
+    function printIcon(objectIcon) {
+        const {name, prefix, family, type} = objectIcon;
         // console.log(name, prefix, family);
         const typeIndex = iconTypes.indexOf(type);
         console.log(typeIndex, name);
@@ -140,6 +167,6 @@ $(document).ready(function() {
             <i class='${family} ${prefix}-${name} fa-2x' style='color:${iconColor}'</i>
             <p>${name}</p>
         `);
-    });
+    };
 
 });
