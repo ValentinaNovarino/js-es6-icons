@@ -34,7 +34,7 @@ $(document).ready(function() {
             family: 'far'
         },
         {
-            name: 'Hamburger',
+            name: 'hamburger',
             prefix: 'fa',
             type: 'food',
             family: 'fas'
@@ -89,11 +89,11 @@ $(document).ready(function() {
         const {name, prefix, family} = icon;
         console.log(name, prefix, family);
 
-        stampo in pagina con il template literal
+        // stampo in pagina con il template literal
         $('#icons-container').append(`
-            <div class=icon>
-                <i class='${family} ${prefix}${name}'</i>
-            </div>
+
+            <i class='${family} ${prefix}-${name}'</i>
+
         `);
 
     });
