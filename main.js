@@ -117,9 +117,15 @@ $(document).ready(function() {
     iconTypes.forEach((type) => {
         $('.filter-icon').append(`
             <option value='${type}'>${type}</option>
-            `)
+        `)
     });
 
+    // intercetto con change il cambio di valore di una select
+    $('.filter-icon').change(() => {
+        // console.log('cambiato elemento select');
+        const selectedType = $('.filter-icon').val();
+        console.log(selectedType);
+    });
     // visualizzare in pagin tutte le icone
     // destrutturo e recupero le chiavi che mi servono per stampare le icone in pagina in ciclo forEach per scorrere tutti gli oggetti icon
     icons.forEach((icon) => {
