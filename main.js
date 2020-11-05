@@ -91,11 +91,9 @@ $(document).ready(function() {
 
         // stampo in pagina con il template literal
         $('#icons-container').append(`
-
-            <i class='${family} ${prefix}-${name}'</i>
-
+            <i class='${family} ${prefix}-${name} fa-2x'</i>
+            <p>${name}</p>
         `);
-
     });
 
 

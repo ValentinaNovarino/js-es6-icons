@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#icons-container {
+    padding: 10px;
+    margin: 10px;
+}
+
+#icons-container i {
+    display: block;
+    margin: 10px 0;
+}
+
+#icons-container p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#name {
+    font-size: 14px;
+}
