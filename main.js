@@ -8,10 +8,17 @@ $(document).ready(function() {
     literal, visualizzare in pagina tutte le icone con il
     proprio nome.*/
 
-    /*  *****milestone 2*****:
+    /*  *****milestone 2*****
     definire un array di colori e associare ad ogni
     tipo di icona un colore.
     Visualizzare le icone di colore diverso in base al tipo.*/
+
+    /*  *****milestone 3*****
+    aggiungere una select per filtrare le icone in
+    base al tipo.
+    Popolare le options della select dinamicamente
+    e, ogni volta che cambia il valore selezionato,
+    visualizzare le icone corrispondenti.*/
 
     // definire array di oggetti
     const icons = [
@@ -104,6 +111,15 @@ $(document).ready(function() {
         };
     });
     console.log(iconTypes);
+
+    // scorro tutti i tipi di icona
+    // per tutti i tipi di icona aggiungo un' option alla select
+    iconTypes.forEach((type) => {
+        $('.filter-icon').append(`
+            <option value='${type}'>${type}</option>
+            `)
+    });
+
     // visualizzare in pagin tutte le icone
     // destrutturo e recupero le chiavi che mi servono per stampare le icone in pagina in ciclo forEach per scorrere tutti gli oggetti icon
     icons.forEach((icon) => {
