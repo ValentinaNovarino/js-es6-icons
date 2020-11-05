@@ -96,7 +96,28 @@ $(document).ready(function() {
         `);
     });
 
+    /*  *****milestone 2*****:
+    definire un array di colori e associare ad ogni
+    tipo di icona un colore.
+    Visualizzare le icone di colore diverso in base al tipo.*/
 
+    // creo l'array di colori
+    const colors = ['orange', 'green', 'blu'];
+
+    // recupero tutti i tipi di icona con un ciclo forEach
+    // creo una variabile per i tipi di icona
+    const iconTypes = [];
+    // ciclo le icone
+    icons.forEach((icon) => {
+    // destrutturo icon e recupero il tipo di icona per ogni icona corrente
+    const {type} = icon;
+
+    if(!iconTypes.includes(type)) {
+        // se il tipo di icona dell'elemento corrente non è presente nell'array iconTypes lo inserisco altrimenti passo all'icona successiva
+        iconTypes.push(type);
+    };
+});
+console.log(iconTypes);
 
 
 });
